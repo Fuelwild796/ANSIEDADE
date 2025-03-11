@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Você 💙</title>
+    <style>
+        body {
+            background: linear-gradient(120deg, #1e3c72, #2a5298);
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: #ffb6c1;
+            color: #333;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff69b4;
+            color: white;
+        }
+        .stars {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            animation: twinkle 2s infinite;
+            border-radius: 50%;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0; }
+            50% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Respire fundo... 💙</h1>
+        <p id="message">Você é forte e especial. Estou aqui com você. 🌸</p>
+        <button onclick="changeMessage()">Preciso de mais palavras 💫</button>
+    </div>
+    
+    <audio id="backgroundAudio" loop autoplay controls>
+        <source src="WhatsApp Ptt 2025-03-10 at 21.07.44.ogg" type="audio/ogg">
+        Seu navegador não suporta áudio.
+    </audio>
+    
+    <script>
+        const messages = [
+            "Você é mais forte do que imagina. 💪",
+            "Tudo bem desacelerar. Respire fundo. 🌿",
+            "Estou aqui para você, sempre. 💙",
+            "Cada momento difícil passa. Você vai superar. 🌟",
+            "Seu sorriso ilumina o mundo. ☀️"
+        ];
+        
+        function changeMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").innerText = messages[randomIndex];
+        }
+        
+        // Criar estrelas no fundo
+        function createStars() {
+            for (let i = 0; i < 50; i++) {
+                let star = document.createElement("div");
+                star.className = "stars";
+                star.style.left = Math.random() * 100 + "vw";
+                star.style.top = Math.random() * 100 + "vh";
+                star.style.animationDuration = (Math.random() * 3 + 2) + "s";
+                document.body.appendChild(star);
+            }
+        }
+        createStars();
+    </script>
+</body>
+</html>
